@@ -1,0 +1,7 @@
+<nav class="navbar-sidebar">
+    <ul class="list-unstyled navbar-list">
+        <li *ngFor="let c of (categories$ | async) ">
+            <a routerLink="category/{{c.id}}">{{c.name}}</a>
+        </li>
+    </ul>
+</nav>

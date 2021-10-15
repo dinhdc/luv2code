@@ -1,0 +1,5 @@
+<p>welcome works!</p>
+<input type="text" name="index" placeholder="Enter Category Id" #index ngModel />
+<input type="text" name="key" placeholder="Enter keyword to search" #key ngModel />
+<p>{{index.value}}</p>
+<button (click)="loading(index.value, key.value)">Load on category 3</button>
