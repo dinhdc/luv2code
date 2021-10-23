@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/products")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin({"http://localhost:4200", "https://256wv.csb.app/"})
 public class ProductController {
 
     @Autowired

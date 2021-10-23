@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div *ngIf="products.length > 0;else noData">
+    <div class="row">
+      <div
+        class="col-md-3"
+        *ngFor="let p of products | paginate : {
+                itemsPerPage: pageSize,
+                currentPage: page,
+                totalItems: count
+              };"
+      >
+        <div class="product-box text-center">
+          <a routerLink="/products/{{p.id}}" class="d-inline">
+            <img src="{{p.imageUrl}}" class="img-responsive" />
+          </a>
+          <a routerLink="/products/{{p.id}}" class="d-inline">
+            <h1>{{p.name}}</h1>
+          </a>
+          <div class="price">{{p.unitPrice}} $</div>
+          <button (click)="addToCart(p)" class="btn btn-primary btn-sm">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-pagination">
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-5">
+          <pagination-controls
+            class="d-flex align-items-center justify-content-center"
+            [responsive]="true"
+            previousLabel="Prev"
+            nextLabel="Next"
+            (pageChange)="onPageChange($event)"
+          >
+          </pagination-controls>
+        </div>
+        <div class="col-md-1">
+          <div class="p-2 bd-highlight" style="margin-bottom: 1rem;">
+            <select (change)="onPageSizeChange($event)" class="custom-select">
+              <option *ngFor="let size of pageSizeOptions" [ngValue]="size">
+                {{ size }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <h1 class="bg-warning">No products to display</h1>
+  </ng-template>
+</div>
