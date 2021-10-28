@@ -1,8 +1,9 @@
-import { Product } from "./product.interface";
+import {Product} from "./product.interface";
+
 export class CartItem {
-  id: String;
-  name: String;
-  imageUrl: String;
+  id: string;
+  name: string;
+  imageUrl: string;
   unitPrice: number;
   quantity: number;
 

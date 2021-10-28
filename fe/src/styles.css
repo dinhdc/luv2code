@@ -5,6 +5,7 @@
  * ----------------------------
  */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -540,16 +541,16 @@ input.au-input.au-input-xl {
 }
 
 .header-mobile-2.header-mobile
-  .hamburger
-  .hamburger-box
-  .hamburger-inner::before {
+.hamburger
+.hamburger-box
+.hamburger-inner::before {
   background: #fff;
 }
 
 .header-mobile-2.header-mobile
-  .hamburger
-  .hamburger-box
-  .hamburger-inner::after {
+.hamburger
+.hamburger-box
+.hamburger-inner::after {
   background: #fff;
 }
 

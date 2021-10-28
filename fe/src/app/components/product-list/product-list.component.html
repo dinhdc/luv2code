@@ -2,18 +2,18 @@
   <div *ngIf="products.length > 0;else noData">
     <div class="row">
       <div
-        class="col-md-3"
         *ngFor="let p of products | paginate : {
                 itemsPerPage: pageSize,
                 currentPage: page,
                 totalItems: count
               };"
+        class="col-md-3"
       >
         <div class="product-box text-center">
-          <a routerLink="/products/{{p.id}}" class="d-inline">
-            <img src="{{p.imageUrl}}" class="img-responsive" />
+          <a class="d-inline" routerLink="/products/{{p.id}}">
+            <img class="img-responsive" src="{{p.imageUrl}}"/>
           </a>
-          <a routerLink="/products/{{p.id}}" class="d-inline">
+          <a class="d-inline" routerLink="/products/{{p.id}}">
             <h1>{{p.name}}</h1>
           </a>
           <div class="price">{{p.unitPrice}} $</div>
@@ -28,11 +28,11 @@
         <div class="col-md-6"></div>
         <div class="col-md-5">
           <pagination-controls
-            class="d-flex align-items-center justify-content-center"
-            [responsive]="true"
-            previousLabel="Prev"
-            nextLabel="Next"
             (pageChange)="onPageChange($event)"
+            [responsive]="true"
+            class="d-flex align-items-center justify-content-center"
+            nextLabel="Next"
+            previousLabel="Prev"
           >
           </pagination-controls>
         </div>

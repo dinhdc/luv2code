@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Observable } from "rxjs";
-import { CartItem } from "src/app/common/cart-item.class";
-import { Product } from "src/app/common/product.interface";
-import { BackendService } from "src/app/services/backend.service";
-import { CartService } from "src/app/services/cart.service";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
+import {Observable} from "rxjs";
+import {CartItem} from "src/app/common/cart-item.class";
+import {Product} from "src/app/common/product.interface";
+import {BackendService} from "src/app/services/backend.service";
+import {CartService} from "src/app/services/cart.service";
 
 @Component({
   selector: "app-product-detail",
@@ -27,16 +27,20 @@ import { CartService } from "src/app/services/cart.service";
   </div>`
 })
 export class ProductDetailComponent implements OnInit {
-  product$!: Observable<Product> ;
+  product$!: Observable<Product>;
+
   constructor(
     private service: BackendService,
     private route: ActivatedRoute,
     private cartService: CartService
-  ) {}
+  ) {
+  }
+
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get("id") as string;
     this.product$ = this.service.getProductById(+id);
   }
+
   addToCart() {
     this.product$.subscribe((p) => this.cartService.addToCart(new CartItem(p)));
   }

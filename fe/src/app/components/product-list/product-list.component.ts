@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { CartItem } from "src/app/common/cart-item.class";
-import { CartService } from "src/app/services/cart.service";
-import { Product } from "../../common/product.interface";
-import { BackendService } from "../../services/backend.service";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
+import {CartItem} from "src/app/common/cart-item.class";
+import {CartService} from "src/app/services/cart.service";
+import {Product} from "../../common/product.interface";
+import {BackendService} from "../../services/backend.service";
+
 @Component({
   selector: "app-product-list",
   templateUrl: "./product-list.component.html",
@@ -21,7 +22,9 @@ export class ProductListComponent implements OnInit {
     private route: ActivatedRoute,
     private service: BackendService,
     private cartService: CartService
-  ) {}
+  ) {
+  }
+
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => this.listProduct());
   }

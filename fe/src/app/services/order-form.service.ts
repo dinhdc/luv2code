@@ -1,17 +1,18 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
-import { Country } from '../common/country.interface';
-import { State } from '../common/state.interface';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from "@angular/core";
+import {Observable, of} from "rxjs";
+import {Country} from '../common/country.interface';
+import {State} from '../common/state.class';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrderFormService {
-  private countryURL = 'http://localhost:8080/api/countries';
-  private stateURL = 'http://localhost:8080/api/states';
+  private countryURL = 'http://localhost:9000/api/countries';
+  private stateURL = 'http://localhost:9000/api/states';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.countryURL);

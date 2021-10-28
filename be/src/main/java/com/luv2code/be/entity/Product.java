@@ -1,16 +1,19 @@
 package com.luv2code.be.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
 @Table(name = "product")
-@Data
+@Getter
+@Setter
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +26,7 @@ public class Product {
     @Column(name = "description")
     private String description;
     @Column(name = "unit_price")
-    private Float unitPrice;
+    private BigDecimal unitPrice;
     @Column(name = "image_url")
     private String imageUrl;
     @Column(name = "active")

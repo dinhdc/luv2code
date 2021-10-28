@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
-import { NgForm } from "@angular/forms";
-import { Router } from "@angular/router";
+import {Component} from "@angular/core";
+import {NgForm} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: "app-search",
@@ -20,7 +20,9 @@ import { Router } from "@angular/router";
   </form>`
 })
 export class SearchComponent {
-  constructor(private route: Router) {}
+  constructor(private route: Router) {
+  }
+
   searchProduct(f: NgForm) {
     let p = f.value.search;
     if (p) {

@@ -6,9 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin({"http://localhost:4200", "https://256wv.csb.app/"})
 @RestController
 @RequestMapping("/api/states")
+@CrossOrigin({"http://localhost:4200", "https://256wv.csb.app/"})
 public class StateController {
 
     @Autowired

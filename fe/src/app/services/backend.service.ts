@@ -1,14 +1,17 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Product } from "../common/product.interface";
-import { Category } from "../common/category.interface";
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Product} from "../common/product.interface";
+import {Category} from "../common/category.interface";
+
 @Injectable({
   providedIn: "root"
 })
 export class BackendService {
-  constructor(private http: HttpClient) {}
-  private URL = "http://localhost:8080/api";
+  private URL = "http://localhost:9000/api";
+
+  constructor(private http: HttpClient) {
+  }
 
   // get product list
   getProductList(): Observable<Product[]> {
