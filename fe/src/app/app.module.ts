@@ -12,6 +12,7 @@ import {ProductDetailComponent} from './components/product-detail/product-detail
 import {ProductListComponent} from './components/product-list/product-list.component';
 import {SearchComponent} from './components/search/search.component';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
     CartStatusComponent,
     CartDetailComponent,
     CheckoutComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

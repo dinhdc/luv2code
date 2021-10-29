@@ -5,7 +5,7 @@
  * ----------------------------
  */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-
+@import "node_modules/@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
 * {
   margin: 0;
   padding: 0;
